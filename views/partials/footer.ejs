@@ -1,0 +1,27 @@
+        </div>
+    </div>
+    
+    <script>
+        // Add some interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Auto-focus first input in forms
+            const firstInput = document.querySelector('form input[type="text"], form input[type="number"]');
+            if (firstInput) {
+                firstInput.focus();
+            }
+            
+            // Add loading state to form submissions
+            const forms = document.querySelectorAll('form');
+            forms.forEach(form => {
+                form.addEventListener('submit', function() {
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    if (submitBtn) {
+                        submitBtn.disabled = true;
+                        submitBtn.textContent = 'Processing...';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

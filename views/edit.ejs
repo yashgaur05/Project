@@ -1,0 +1,76 @@
+<%- include('partials/header', { title: 'Edit Vehicle', page: 'edit' }) %>
+
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+    <h2 style="color: #2c3e50; font-size: 2rem;">Edit Vehicle</h2>
+    <a href="/" class="btn">← Back to Inventory</a>
+</div>
+
+<div style="max-width: 600px; margin: 0 auto;">
+    <form method="POST" action="/vehicles/<%= vehicle.id %>/edit" style="background: #f8f9fa; padding: 30px; border-radius: 10px;">
+        <div class="form-group">
+            <label for="brand">Brand *</label>
+            <input type="text" id="brand" name="brand" required
+                   value="<%= vehicle.brand %>" placeholder="e.g., Maruti Suzuki, Hyundai, Tata">
+        </div>
+
+        <div class="form-group">
+            <label for="name">Vehicle Name *</label>
+            <input type="text" id="name" name="name" required
+                   value="<%= vehicle.name %>" placeholder="e.g., Maruti Suzuki Swift 2024">
+        </div>
+
+        <div class="form-group">
+            <label for="model">Model *</label>
+            <input type="text" id="model" name="model" required
+                   value="<%= vehicle.model %>" placeholder="e.g., Swift, Creta, Nexon">
+        </div>
+
+        <div class="form-group">
+            <label for="price">Price (INR) *</label>
+            <input type="number" id="price" name="price" required min="0" step="1"
+                   value="<%= vehicle.price %>" placeholder="e.g., 1200000">
+        </div>
+
+        <div class="form-group">
+            <label for="image">Image URL</label>
+            <input type="url" id="image" name="image" 
+                   value="<%= vehicle.image %>" placeholder="https://example.com/image.jpg">
+            <small style="color: #7f8c8d; display: block; margin-top: 5px;">
+                Leave empty to use placeholder image
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label for="desc">Description</label>
+            <textarea id="desc" name="desc" rows="4" 
+                      placeholder="Enter vehicle description, features, etc."><%= vehicle.desc %></textarea>
+        </div>
+
+        <div style="display: flex; gap: 15px; justify-content: flex-end;">
+            <a href="/" class="btn" style="background: #95a5a6;">Cancel</a>
+            <button type="submit" class="btn btn-warning">Update Vehicle</button>
+        </div>
+    </form>
+</div>
+
+<!-- Current Vehicle Preview -->
+<div style="margin-top: 40px; padding: 20px; background: #fff; border-radius: 10px; border: 1px solid #ddd;">
+    <h4 style="color: #2c3e50; margin-bottom: 15px;">Current Vehicle Preview</h4>
+    <div class="vehicle-card" style="max-width: 400px;">
+        <img src="<%= vehicle.image %>" alt="<%= vehicle.name %>" class="vehicle-image" 
+             onerror="this.src='https://via.placeholder.com/300x200?text=No+Image'">
+        
+        <div class="vehicle-info">
+            <div class="vehicle-brand"><%= vehicle.brand %></div>
+            <div class="vehicle-name"><%= vehicle.name %></div>
+            <div class="vehicle-model">Model: <%= vehicle.model %></div>
+            <div class="vehicle-price">₹<%= vehicle.price.toLocaleString('en-IN') %></div>
+            
+            <% if (vehicle.desc) { %>
+                <div class="vehicle-desc"><%= vehicle.desc %></div>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,18 @@
+{
+  "name": "vehicle-management-api",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["vehicle", "api", "crud", "express", "ejs"],
+  "author": "",
+  "license": "ISC",
+  "description": "A RESTful API for vehicle management with CRUD operations",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}
