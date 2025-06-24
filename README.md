@@ -1,4 +1,4 @@
-# Vehicle Management API - Indian Market
+# Vehicle Model API 
 
 A RESTful API for managing vehicle inventory with full CRUD operations, featuring popular Indian market vehicles with accurate pricing. Built with Express.js and EJS templating engine.
 
@@ -26,54 +26,6 @@ npm start
 
 4. Open your browser and navigate to `http://localhost:3000`
 
-## API Endpoints
-
-### GET /api/vehicles
-Get all vehicles
-```bash
-curl http://localhost:3000/api/vehicles
-```
-
-### GET /api/vehicles/:id
-Get a single vehicle by ID
-```bash
-curl http://localhost:3000/api/vehicles/1
-```
-
-### POST /api/vehicles
-Create a new vehicle
-```bash
-curl -X POST http://localhost:3000/api/vehicles \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "i20",
-    "name": "Hyundai i20 2024",
-    "price": 749000,
-    "brand": "Hyundai",
-    "image": "https://imgd.aeplcdn.com/664x374/n/cw/ec/106809/i20-exterior-right-front-three-quarter-0.jpeg",
-    "desc": "Premium hatchback with sporty design and advanced features"
-  }'
-```
-
-### PUT /api/vehicles/:id
-Update an existing vehicle
-```bash
-curl -X PUT http://localhost:3000/api/vehicles/1 \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "Swift Dzire",
-    "name": "Maruti Suzuki Swift Dzire 2024",
-    "price": 649000,
-    "brand": "Maruti Suzuki",
-    "desc": "Compact sedan with excellent fuel efficiency"
-  }'
-```
-
-### DELETE /api/vehicles/:id
-Delete a vehicle
-```bash
-curl -X DELETE http://localhost:3000/api/vehicles/1
-```
 
 ## Vehicle Schema
 
@@ -161,3 +113,5 @@ You can test the API using tools like:
 ## License
 
 ISC License
+
+* Yash Gaur 2025 © 
